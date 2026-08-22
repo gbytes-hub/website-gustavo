@@ -33,10 +33,10 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 body.p-bio{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-parcerias{background-image:url("../img/texturas/textura_papel4.jpg")}
+body.p-parcerias{background-image:url("../img/texturas/papel_jornal.jpg")}
 body.p-direcao{background-image:url("../img/texturas/papel_amassado.jpg")}
 body.p-drag{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-criticas{background-image:url("../img/texturas/textura_fibrosa.jpg")}
+body.p-criticas{background-image:url("../img/texturas/papel_jornal.jpg")}
 body.p-design{background-image:url("../img/texturas/papel_amassado.jpg")}
 body.p-contato{background-image:url("../img/texturas/papel_jornal.jpg")}
 
@@ -58,7 +58,7 @@ body.p-contato{background-image:url("../img/texturas/papel_jornal.jpg")}
 .nav > .wrap > ul > li > a{
   font-family:var(--texto);font-size:14px;font-weight:700;
   letter-spacing:.12em;text-transform:uppercase;color:var(--preto);
-  text-decoration:none;padding:5px 0;display:inline-block;
+  text-decoration:none;padding:5px 0;display:inline-block;border:none;
 }
 .nav > .wrap > ul > li > a:hover{color:var(--vermelho)}
 
@@ -95,8 +95,8 @@ h3{font-size:clamp(19px,2.4vw,27px);margin-bottom:9px}
 p{margin-bottom:1.15em;max-width:66ch}
 
 a{color:var(--vermelho);font-weight:700;text-transform:uppercase;
-  font-size:14px;letter-spacing:.05em;text-decoration:none;border-bottom:1.5px solid rgba(230,51,41,.35)}
-a:hover{border-bottom-color:var(--vermelho)}
+  font-size:14px;letter-spacing:.05em;text-decoration:none;border:none}
+a:hover{text-decoration:underline}
 p a,li a{font-size:inherit;text-transform:none;letter-spacing:0}
 .destaque{color:var(--azul);font-weight:700}
 
@@ -114,17 +114,11 @@ p a,li a{font-size:inherit;text-transform:none;letter-spacing:0}
   position:relative;overflow:hidden;
 }
 .cabecalho::after{content:"";position:absolute;inset:0;background:rgba(239,234,224,.5);pointer-events:none}
-.cabecalho .wrap{position:relative;z-index:2;display:flex;align-items:flex-end;
-  justify-content:space-between;gap:clamp(24px,4vw,64px);flex-wrap:wrap;
+.cabecalho .wrap{position:relative;z-index:2;display:flex;justify-content:center;
   padding-bottom:clamp(30px,4vw,58px)}
-.home-nome{flex:1 1 480px}
-.home-nome img{width:100%;max-width:640px;height:auto;display:block;
+.home-nome{width:100%}
+.home-nome img{width:100%;max-width:720px;height:auto;display:block;margin:0 auto;
   filter:drop-shadow(3px 4px 6px rgba(20,18,16,.22))}
-.home-dalva{flex:0 0 auto}
-.home-dalva img{width:clamp(120px,17vw,205px);height:auto;display:block;
-  filter:drop-shadow(4px 5px 8px rgba(20,18,16,.28));transition:transform .2s ease}
-.home-dalva a{border:none}
-.home-dalva a:hover img{transform:rotate(-2deg) scale(1.04)}
 
 .faixa-texto{padding:clamp(44px,6vw,88px) 0}
 .faixa-texto .wrap{max-width:760px}
@@ -207,6 +201,50 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
   .par{grid-template-columns:1fr}
   .box,blockquote{transform:none}
   .cabecalho .wrap{justify-content:center;text-align:center}
-  .home-dalva{margin:0 auto}
-}
+  }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* ---------- foto/vídeo ao lado do texto ---------- */
+.lado{display:grid;grid-template-columns:1fr minmax(230px,300px);
+  gap:clamp(20px,3vw,36px);align-items:start}
+.lado.esq{grid-template-columns:minmax(230px,300px) 1fr}
+.lado .media{margin:0}
+.lado .media img{width:100%;height:auto;display:block;
+  box-shadow:2px 3px 10px rgba(20,18,16,.16)}
+.lado .media figcaption{font-family:var(--dados);font-size:14px;margin-top:9px}
+.lado .media img.retrato{max-height:520px;width:auto;max-width:100%}
+@media(max-width:760px){
+  .lado,.lado.esq{grid-template-columns:1fr}
+  .lado .media{max-width:340px}
+}
+
+/* imagens nunca ampliadas */
+.figs img,.lado .media img,.galeria img{max-width:100%;height:auto}
+
+/* ---------- vídeo menor ---------- */
+.embed{max-width:440px;padding-bottom:0;height:auto;margin:0}
+.embed iframe{position:static;width:100%;aspect-ratio:16/9;height:auto;display:block}
+.embed-spotify{max-width:400px;margin:0}
+.embed-spotify iframe{width:100%;height:352px}
+
+/* ---------- carrossel (só na Design) ---------- */
+.carrossel{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;
+  padding:6px 0 20px;margin:26px 0;
+  scrollbar-width:thin;scrollbar-color:var(--vermelho) rgba(20,18,16,.12)}
+.carrossel img{height:clamp(200px,26vw,320px);width:auto;max-width:none;
+  flex:0 0 auto;display:block;box-shadow:2px 3px 10px rgba(20,18,16,.16)}
+.carrossel::-webkit-scrollbar{height:9px}
+.carrossel::-webkit-scrollbar-track{background:rgba(20,18,16,.10)}
+.carrossel::-webkit-scrollbar-thumb{background:var(--vermelho)}
+
+/* ---------- citações menores ---------- */
+blockquote{padding:clamp(16px,2vw,24px);margin:26px 0;max-width:56ch}
+blockquote p{font-size:16px;line-height:1.6}
+blockquote cite{margin-top:11px}
+
+/* ---------- formulário menor ---------- */
+.form{max-width:440px}
+.form label{margin-top:14px;margin-bottom:5px}
+.form input,.form textarea{padding:10px;font-size:15px}
+.form textarea{min-height:110px}
