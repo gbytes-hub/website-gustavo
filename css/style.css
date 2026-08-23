@@ -35,9 +35,9 @@ body{
 body.p-bio{background-image:url("../img/texturas/papel_rosado.jpg")}
 body.p-parcerias{background-image:url("../img/texturas/parede_clara.jpg")}
 body.p-direcao{background-image:url("../img/texturas/pagina_impressa.jpg")}
-body.p-drag{background-image:url("../img/texturas/tijolos_verde.jpg")}
+body.p-drag{background-image:url("../img/texturas/papel_rosado.jpg")}
 body.p-criticas{background-image:url("../img/texturas/parede_clara.jpg")}
-body.p-design{background-image:url("../img/texturas/papel_rosado.jpg")}
+body.p-design{background-image:url("../img/texturas/tijolos_verde.jpg")}
 body.p-contato{background-image:url("../img/texturas/papel_rosado.jpg")}
 
 .wrap{max-width:var(--larg);margin:0 auto;padding:0 26px}
@@ -47,10 +47,7 @@ body.p-contato{background-image:url("../img/texturas/papel_rosado.jpg")}
 /* ---------- MENU ---------- */
 .nav{
   position:sticky;top:0;z-index:100;
-  background:var(--cinza);
-  background-image:url("../img/texturas/home_impressa.jpg");
-  background-size:cover;background-position:center;
-  background-blend-mode:multiply;
+  background:var(--preto);
 }
 .nav .wrap{display:flex;justify-content:center;flex-wrap:wrap;
   gap:clamp(16px,2.6vw,34px);padding-top:15px;padding-bottom:15px}
@@ -58,7 +55,7 @@ body.p-contato{background-image:url("../img/texturas/papel_rosado.jpg")}
 .nav > .wrap > ul > li{position:relative}
 .nav > .wrap > ul > li > a{
   font-family:var(--titulo);font-size:12px;font-weight:400;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--preto);
+  letter-spacing:.16em;text-transform:uppercase;color:#fff;
   text-decoration:none;padding:5px 0;display:inline-block;border:none;
 }
 .nav > .wrap > ul > li > a:hover{color:var(--vermelho)}
@@ -83,15 +80,16 @@ body.p-contato{background-image:url("../img/texturas/papel_rosado.jpg")}
 }
 .nav ul.sub a:hover{background:var(--papel-med);color:var(--vermelho)}
 @media(max-width:860px){
+  .nav ul.sub a{color:#fff}
   .nav ul.sub{display:none}
   .nav li:hover > .sub,.nav li:focus-within > .sub{display:none}
 }
 
 /* ---------- TIPOGRAFIA ---------- */
 h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.06;letter-spacing:-.005em;color:var(--preto)}
-h1{font-size:clamp(34px,5.4vw,60px)}
-h2{font-size:clamp(25px,3.9vw,44px);margin-bottom:16px}
-h3{font-size:clamp(17px,2.1vw,24px);margin-bottom:8px}
+h1{font-size:clamp(30px,4.8vw,52px)}
+h2{font-size:clamp(22px,3.4vw,38px);margin-bottom:14px}
+h3{font-size:clamp(16px,1.9vw,21px);margin-bottom:7px}
 
 p{margin-bottom:1.15em;max-width:66ch}
 
@@ -116,12 +114,16 @@ p a,li a{font-size:inherit;text-transform:none;letter-spacing:0}
 }
 .cabecalho::after{content:"";position:absolute;inset:0;background:rgba(239,234,224,.5);pointer-events:none}
 .cabecalho .wrap{position:relative;z-index:2;display:flex;justify-content:center;
-  padding-bottom:clamp(18px,2.4vw,32px)}
+  padding-bottom:0}
+.cabecalho{overflow:visible}
+.home-nome{position:relative;z-index:5;margin-bottom:-13%;
+  transform:translateX(-7%)}
+@media(max-width:820px){.home-nome{transform:none;margin-bottom:-11%}}
 .home-nome{width:100%}
 .home-nome img{width:100%;max-width:720px;height:auto;display:block;margin:0 auto;
   filter:drop-shadow(3px 4px 6px rgba(20,18,16,.22))}
 
-.faixa-texto{padding:clamp(22px,3vw,40px) 0}
+.faixa-texto{padding:clamp(22px,3vw,40px) 0;padding-top:14%}
 .faixa-texto .wrap{max-width:760px}
 .faixa-texto p{font-size:15px;max-width:100%}
 
@@ -168,8 +170,8 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
 
 /* ---------- CRÍTICAS ---------- */
 .grupo-critica{margin-bottom:24px}
-.grupo-critica h3{font-family:var(--dados);font-size:14px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--vermelho);margin-bottom:18px;font-weight:700}
+.grupo-critica h3{font-family:var(--titulo);font-size:clamp(15px,1.7vw,19px);
+  letter-spacing:0;text-transform:none;color:var(--preto);margin-bottom:12px;font-weight:400}
 .item-critica{margin-bottom:16px;max-width:74ch}
 .item-critica .veic{font-family:var(--dados);font-size:14px;color:var(--preto);
   letter-spacing:.04em;display:block;margin-top:2px}
@@ -211,10 +213,16 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
   gap:clamp(16px,2.2vw,28px);align-items:start}
 .lado.esq{grid-template-columns:minmax(230px,300px) 1fr}
 .lado .media{margin:0}
-.lado .media img{width:100%;height:auto;display:block;
+.lado .media img{height:260px;width:auto;max-width:100%;display:block;
   box-shadow:2px 3px 10px rgba(20,18,16,.16)}
+.lado .media{display:flex;flex-direction:column;align-items:flex-start}
+.lado:not(.esq) .media{align-items:flex-end}
+.lado:not(.esq) > div:first-child{text-align:right}
+.lado:not(.esq) > div:first-child p{margin-left:auto}
+.lado.esq > div:last-child{text-align:left}
+.lado > div:first-child p{max-width:none}
 .lado .media figcaption{font-family:var(--dados);font-size:14px;margin-top:9px}
-.lado .media img.retrato{max-height:520px;width:auto;max-width:100%}
+.lado .media img.retrato{height:340px;width:auto;max-width:100%}
 @media(max-width:760px){
   .lado,.lado.esq{grid-template-columns:1fr}
   .lado .media{max-width:340px}
@@ -224,7 +232,7 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
 .figs img,.lado .media img,.galeria img{max-width:100%;height:auto}
 
 /* ---------- vídeo menor ---------- */
-.embed{max-width:440px;padding-bottom:0;height:auto;margin:0}
+.embed{max-width:650px;width:100%;padding-bottom:0;height:auto;margin:0 0 14px}
 .embed iframe{position:static;width:100%;aspect-ratio:16/9;height:auto;display:block}
 .embed-spotify{max-width:400px;margin:0}
 .embed-spotify iframe{width:100%;height:232px}
@@ -269,21 +277,22 @@ blockquote cite{margin-top:11px}
 /* ---------- 18: moldura de pincel na foto de perfil ---------- */
 .emoldurada{position:relative;display:block;width:100%}
 .emoldurada img.foto{display:block;width:100%;height:auto}
-.emoldurada img.moldura{position:absolute;left:-5%;top:-4%;width:110%;height:108%;
-  pointer-events:none;object-fit:fill}
+.emoldurada img.moldura{position:absolute;left:-8%;top:-7%;width:116%;height:114%;
+  pointer-events:none;object-fit:fill;z-index:2}
+.emoldurada img.foto{position:relative;z-index:1}
 
 /* ---------- 3: menu sanduíche ---------- */
 .hamburguer{display:none;background:none;border:none;cursor:pointer;padding:8px;
-  font-family:var(--titulo);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--preto)}
+  font-family:var(--titulo);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
 @media(max-width:860px){
   .hamburguer{display:block}
   .nav .wrap{justify-content:flex-start;padding-top:10px;padding-bottom:10px}
   .nav > .wrap > ul{display:none;width:100%;flex-direction:column;gap:0;margin-top:8px}
   .nav.aberto > .wrap > ul{display:flex}
-  .nav > .wrap > ul > li{width:100%;border-top:1px solid rgba(20,18,16,.12)}
+  .nav > .wrap > ul > li{width:100%;border-top:1px solid rgba(255,255,255,.16)}
   .nav > .wrap > ul > li > a{padding:11px 0;width:100%;font-size:13px}
   .nav ul.sub{display:none;position:static !important;opacity:1;visibility:visible;
-    transform:none;box-shadow:none;background:rgba(0,0,0,.04);padding:4px 0;min-width:0}
+    transform:none;box-shadow:none;background:rgba(255,255,255,.07);padding:4px 0;min-width:0}
   .nav li.expandido > ul.sub{display:flex}
   .nav ul.sub a{padding:8px 16px;font-size:13px}
 }
