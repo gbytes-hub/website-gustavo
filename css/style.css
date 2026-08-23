@@ -14,40 +14,41 @@
   --dados:"Courier Prime","Courier New",monospace;
 
   --larg:1120px;
-  --gap:clamp(52px,7vw,104px);
+  --gap:clamp(20px,2.4vw,36px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 
 body{
   font-family:var(--texto);
-  font-size:16px;
-  line-height:1.75;
+  font-size:15px;
+  line-height:1.72;
   color:var(--preto);
   background:var(--papel);
-  background-image:url("../img/texturas/papel_amassado.jpg");
+  background-image:url("../img/texturas/home_impressa.jpg");
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
   background-blend-mode:multiply;
   -webkit-font-smoothing:antialiased;
 }
-body.p-bio{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-parcerias{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-direcao{background-image:url("../img/texturas/papel_amassado.jpg")}
-body.p-drag{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-criticas{background-image:url("../img/texturas/papel_jornal.jpg")}
-body.p-design{background-image:url("../img/texturas/papel_amassado.jpg")}
-body.p-contato{background-image:url("../img/texturas/papel_jornal.jpg")}
+body.p-bio{background-image:url("../img/texturas/papel_rosado.jpg")}
+body.p-parcerias{background-image:url("../img/texturas/parede_clara.jpg")}
+body.p-direcao{background-image:url("../img/texturas/pagina_impressa.jpg")}
+body.p-drag{background-image:url("../img/texturas/tijolos_verde.jpg")}
+body.p-criticas{background-image:url("../img/texturas/parede_clara.jpg")}
+body.p-design{background-image:url("../img/texturas/papel_rosado.jpg")}
+body.p-contato{background-image:url("../img/texturas/papel_rosado.jpg")}
 
 .wrap{max-width:var(--larg);margin:0 auto;padding:0 26px}
+@media(max-width:760px){.wrap{padding:0 20px}}
 .secao{padding:var(--gap) 0}
 
 /* ---------- MENU ---------- */
 .nav{
   position:sticky;top:0;z-index:100;
   background:var(--cinza);
-  background-image:url("../img/texturas/papel_amassado.jpg");
+  background-image:url("../img/texturas/home_impressa.jpg");
   background-size:cover;background-position:center;
   background-blend-mode:multiply;
 }
@@ -56,8 +57,8 @@ body.p-contato{background-image:url("../img/texturas/papel_jornal.jpg")}
 .nav > .wrap > ul{display:flex;gap:clamp(16px,2.6vw,34px);list-style:none;flex-wrap:wrap;position:relative}
 .nav > .wrap > ul > li{position:relative}
 .nav > .wrap > ul > li > a{
-  font-family:var(--texto);font-size:14px;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--preto);
+  font-family:var(--titulo);font-size:12px;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--preto);
   text-decoration:none;padding:5px 0;display:inline-block;border:none;
 }
 .nav > .wrap > ul > li > a:hover{color:var(--vermelho)}
@@ -88,9 +89,9 @@ body.p-contato{background-image:url("../img/texturas/papel_jornal.jpg")}
 
 /* ---------- TIPOGRAFIA ---------- */
 h1,h2,h3{font-family:var(--titulo);font-weight:400;line-height:1.06;letter-spacing:-.005em;color:var(--preto)}
-h1{font-size:clamp(38px,6vw,68px)}
-h2{font-size:clamp(28px,4.4vw,50px);margin-bottom:20px}
-h3{font-size:clamp(19px,2.4vw,27px);margin-bottom:9px}
+h1{font-size:clamp(34px,5.4vw,60px)}
+h2{font-size:clamp(25px,3.9vw,44px);margin-bottom:16px}
+h3{font-size:clamp(17px,2.1vw,24px);margin-bottom:8px}
 
 p{margin-bottom:1.15em;max-width:66ch}
 
@@ -110,25 +111,25 @@ p a,li a{font-size:inherit;text-transform:none;letter-spacing:0}
 .cabecalho{
   background-image:url("../img/texturas/parede.jpg");
   background-size:cover;background-position:center;
-  padding:clamp(48px,7vw,96px) 0 0;
+  padding:clamp(26px,3.4vw,48px) 0 0;
   position:relative;overflow:hidden;
 }
 .cabecalho::after{content:"";position:absolute;inset:0;background:rgba(239,234,224,.5);pointer-events:none}
 .cabecalho .wrap{position:relative;z-index:2;display:flex;justify-content:center;
-  padding-bottom:clamp(30px,4vw,58px)}
+  padding-bottom:clamp(18px,2.4vw,32px)}
 .home-nome{width:100%}
 .home-nome img{width:100%;max-width:720px;height:auto;display:block;margin:0 auto;
   filter:drop-shadow(3px 4px 6px rgba(20,18,16,.22))}
 
-.faixa-texto{padding:clamp(44px,6vw,88px) 0}
+.faixa-texto{padding:clamp(22px,3vw,40px) 0}
 .faixa-texto .wrap{max-width:760px}
-.faixa-texto p{font-size:16px;max-width:100%}
+.faixa-texto p{font-size:15px;max-width:100%}
 
 /* ---------- OBRAS ---------- */
-.obra{padding:clamp(44px,6vw,80px) 0}
+.obra{padding:clamp(16px,2vw,28px) 0}
 .obra-cab{margin-bottom:22px}
 
-.figs{display:flex;flex-direction:column;gap:clamp(30px,4vw,58px);margin:36px 0}
+.figs{display:flex;flex-direction:column;gap:clamp(14px,1.8vw,22px);margin:16px 0}
 .figs img{width:100%;height:auto;display:block}
 .par{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,30px)}
 .par img{width:100%;height:auto;display:block}
@@ -166,7 +167,7 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
   min-width:82px;letter-spacing:.04em;font-weight:700}
 
 /* ---------- CRÍTICAS ---------- */
-.grupo-critica{margin-bottom:48px}
+.grupo-critica{margin-bottom:24px}
 .grupo-critica h3{font-family:var(--dados);font-size:14px;letter-spacing:.13em;
   text-transform:uppercase;color:var(--vermelho);margin-bottom:18px;font-weight:700}
 .item-critica{margin-bottom:16px;max-width:74ch}
@@ -174,7 +175,7 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
   letter-spacing:.04em;display:block;margin-top:2px}
 
 /* ---------- DESIGN ---------- */
-.galeria{display:flex;flex-direction:column;gap:clamp(30px,4vw,56px);margin:36px 0}
+.galeria{display:flex;flex-direction:column;gap:16px;margin:16px 0}
 .galeria img{width:100%;height:auto;display:block;box-shadow:3px 4px 12px rgba(20,18,16,.14)}
 
 /* ---------- BOTÃO E FORM ---------- */
@@ -206,8 +207,8 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
 
 
 /* ---------- foto/vídeo ao lado do texto ---------- */
-.lado{display:grid;grid-template-columns:1fr minmax(230px,300px);
-  gap:clamp(20px,3vw,36px);align-items:start}
+.lado{display:grid;grid-template-columns:1fr minmax(220px,290px);
+  gap:clamp(16px,2.2vw,28px);align-items:start}
 .lado.esq{grid-template-columns:minmax(230px,300px) 1fr}
 .lado .media{margin:0}
 .lado .media img{width:100%;height:auto;display:block;
@@ -226,11 +227,11 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
 .embed{max-width:440px;padding-bottom:0;height:auto;margin:0}
 .embed iframe{position:static;width:100%;aspect-ratio:16/9;height:auto;display:block}
 .embed-spotify{max-width:400px;margin:0}
-.embed-spotify iframe{width:100%;height:352px}
+.embed-spotify iframe{width:100%;height:232px}
 
 /* ---------- carrossel (só na Design) ---------- */
-.carrossel{display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;
-  padding:6px 0 20px;margin:26px 0;
+.carrossel{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;
+  padding:4px 0 14px;margin:14px 0;
   scrollbar-width:thin;scrollbar-color:var(--vermelho) rgba(20,18,16,.12)}
 .carrossel img{height:clamp(200px,26vw,320px);width:auto;max-width:none;
   flex:0 0 auto;display:block;box-shadow:2px 3px 10px rgba(20,18,16,.16)}
@@ -239,8 +240,8 @@ blockquote cite{display:block;margin-top:14px;font-style:normal;
 .carrossel::-webkit-scrollbar-thumb{background:var(--vermelho)}
 
 /* ---------- citações menores ---------- */
-blockquote{padding:clamp(16px,2vw,24px);margin:26px 0;max-width:56ch}
-blockquote p{font-size:16px;line-height:1.6}
+blockquote{padding:clamp(14px,1.8vw,20px);margin:16px 0;max-width:56ch}
+blockquote p{font-size:15px;line-height:1.6}
 blockquote cite{margin-top:11px}
 
 /* ---------- formulário menor ---------- */
@@ -248,3 +249,41 @@ blockquote cite{margin-top:11px}
 .form label{margin-top:14px;margin-bottom:5px}
 .form input,.form textarea{padding:10px;font-size:15px}
 .form textarea{min-height:110px}
+
+
+/* ---------- 16: zoom nas imagens de design ---------- */
+.carrossel img{cursor:zoom-in;transition:transform .18s ease}
+.carrossel img:hover{transform:scale(1.05)}
+.lightbox{position:fixed;inset:0;background:rgba(20,18,16,.94);z-index:900;
+  display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:96vw;max-height:92vh;width:auto;height:auto;box-shadow:0 6px 40px rgba(0,0,0,.5)}
+.lightbox .fechar{position:absolute;top:16px;right:22px;color:#fff;
+  font-family:var(--dados);font-size:26px;cursor:pointer;line-height:1}
+
+/* ---------- 19: home texto branco sobre preto ---------- */
+.faixa-texto{background:var(--preto)}
+.faixa-texto p{color:#F2EFE9}
+.faixa-texto .lado .media figcaption{color:#C9C3B8}
+
+/* ---------- 18: moldura de pincel na foto de perfil ---------- */
+.emoldurada{position:relative;display:block;width:100%}
+.emoldurada img.foto{display:block;width:100%;height:auto}
+.emoldurada img.moldura{position:absolute;left:-5%;top:-4%;width:110%;height:108%;
+  pointer-events:none;object-fit:fill}
+
+/* ---------- 3: menu sanduíche ---------- */
+.hamburguer{display:none;background:none;border:none;cursor:pointer;padding:8px;
+  font-family:var(--titulo);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--preto)}
+@media(max-width:860px){
+  .hamburguer{display:block}
+  .nav .wrap{justify-content:flex-start;padding-top:10px;padding-bottom:10px}
+  .nav > .wrap > ul{display:none;width:100%;flex-direction:column;gap:0;margin-top:8px}
+  .nav.aberto > .wrap > ul{display:flex}
+  .nav > .wrap > ul > li{width:100%;border-top:1px solid rgba(20,18,16,.12)}
+  .nav > .wrap > ul > li > a{padding:11px 0;width:100%;font-size:13px}
+  .nav ul.sub{display:none;position:static !important;opacity:1;visibility:visible;
+    transform:none;box-shadow:none;background:rgba(0,0,0,.04);padding:4px 0;min-width:0}
+  .nav li.expandido > ul.sub{display:flex}
+  .nav ul.sub a{padding:8px 16px;font-size:13px}
+}
